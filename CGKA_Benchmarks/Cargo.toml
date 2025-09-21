@@ -1,0 +1,35 @@
+[package]
+name = "dark-matter"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+curve25519-dalek = { version = "3", default-features = false, features = [
+    "u32_backend",
+] }
+sha2 = { version = "0.10.8", default-features = false }
+rand_core = { version = "0.5.0", features = ["getrandom"] }
+ed25519-compact = "2"
+hkdf = "0.12.3"
+hex-literal = "0.4.1"
+aes-gcm = "0.10.3"
+rand = "0.7"
+serde ={ version = "1.0", features = ["derive"]}
+serde_derive = "1.0"
+serde_json = "1.0"
+rsa = "0.9.6"
+criterion = "0.3.0"
+
+
+
+[dev-dependencies]
+
+[[bench]]
+name = "benchmarks"
+harness = false
+
+[[bench]]
+name = "message_lengths"
+harness = false
